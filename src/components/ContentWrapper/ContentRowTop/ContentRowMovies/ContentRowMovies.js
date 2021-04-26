@@ -3,18 +3,6 @@ import PropTypes from 'prop-types';
 
 class ContentRowMovies extends Component{
     constructor (props){
-/*  ContentRowMovies.defaultProps = {
-        title: "Sin titulo",
-        style: "warning",
-        number: 0,
-        icon: "fas fa-ban"
-    };
-    ContentRowMovies.propTypes = {
-        title: PropTypes.string.isRequired,
-        style: PropTypes.string.isRequired,
-        number: PropTypes.number.isRequired,
-        icon: PropTypes.string.isRequired
-    } */
         super(props);
         this.state = {
             valores: ""
@@ -53,5 +41,18 @@ class ContentRowMovies extends Component{
     }
 
 }
-    
+
+ContentRowMovies.defaultProps = {
+    title: "Sin titulo",
+    style: "warning",
+    number: 0,
+    icon: "fas fa-ban"
+};
+ContentRowMovies.propTypes = {
+    title: PropTypes.string.isRequired,
+    style: PropTypes.string.isRequired,
+    number: PropTypes.number.isRequired,
+    icon: PropTypes.string.isRequired
+}
+
 export default ContentRowMovies;
