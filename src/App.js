@@ -1,15 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import Footer from "./components/Footer";
-import SideBar from "./components/SideBar";
-import ContentWrapper from './components/ContentWrapper';
+
+import SideBar from "./components/SideBar/SideBar";
+import ContentWrapper from './components/ContentWrapper/ContentWrapper';
 function App() {
   return (
     <>
-      <SideBar />
-      <ContentWrapper />
-      
-      <Footer />
+      <div id="wrapper">
+        <SideBar valor=""/>
+        <ContentWrapper />
+      </div>
     </>
   );
 }
