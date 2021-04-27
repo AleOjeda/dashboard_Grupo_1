@@ -35,7 +35,7 @@ showGenresh= (data) => {
 }
 //Luego de actualizarse el estado:
 componentDidUpdate(){
-    alert("Generos actualizados");
+ //   alert("Generos actualizados");
 }
 
     render (){
