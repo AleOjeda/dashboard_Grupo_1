@@ -39,7 +39,7 @@ class ContentWrapper extends Component{
         let users = [];
         (this.state.users && this.state.users.users) && (users = this.state.users.users);
         let categories = [];
-        (this.state.products && this.state.products.countByCategory) && (categories = new Array(this.state.products.countByCategory));
+        (this.state.products && this.state.products.countByCategory) && (categories = this.state.products.countByCategory);
         let totalUsers = users.length;
         
         

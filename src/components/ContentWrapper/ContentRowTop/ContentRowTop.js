@@ -13,39 +13,39 @@ class ContentRowTop extends Component{
     }
     
     render (){
-        const cards = [
-            {
-              title: "Movies in Data Base",
-              style: "primary",
-              number: 21,
-              icon: "fas fa-film"
-            },
-            {
-              title: "Total awards",
-              style: "success",
-              number: 79,
-              icon: "fas fa-award"
-            },
-            {
-              title: "Actors quantity",
-              style: "warning",
-              number: 48,
-              icon: "fas fa-user"
-            }
-          ]
-        
-        const genres = ["Acción", "Animación", "Aventura", "Ciencia Ficción", "Comedia", "Documental", "Drama", "Fantasía", "Infantiles", "Musical"]
-        
         let products = [];
         let totalUsers = 0;
         let categories = {};
         //console.log(this.props.products[0]);
         if(this.props.products !== [] && this.props.totalUsers !== 0 && this.props.categories !== {} ){
             products = this.props.products;
-            console.log(products);
             totalUsers = this.props.totalUsers;
             categories = this.props.categories;
         }
+        const cards = [
+          {
+            title: "Total de productos",
+            style: "primary",
+            number: products.length,
+            icon: "fas fa-film"
+          },
+          {
+            title: "Total de usuarios",
+            style: "success",
+            number: totalUsers,
+            icon: "fas fa-award"
+          },
+          {
+            title: "Total de categorías",
+            style: "warning",
+            number: Object.keys(categories).length,
+            icon: "fas fa-user"
+          }
+        ]
+        const genres = []
+        Object.keys(categories).map( element =>{
+          genres.push(`${element}: ${categories[element]}`)
+        })
 
         return (
             <div className="container-fluid">
@@ -55,7 +55,7 @@ class ContentRowTop extends Component{
                 <ContentRowMovies cards={cards}/>
                 {/* <!-- Content Row Last Movie in Data Base --> */}
 					<div className="row">
-                        <LastMovieInDb />
+                        <LastMovieInDb products={this.props.products}/>
                         <GenreshInDb genres={genres} />
                     </div>
                     <TableMovies />

@@ -1,27 +1,32 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 class LastMovieInDb extends Component{
     constructor (props){
         super(props);
         this.state = {
-            valores: ""
+            //lastProduct : this.props.products[this.props.products.length]
         }
     }
-
+    
     render (){
+        let totalProducts = this.props.products.length;
+        let lastProduct = this.props.products[totalProducts -1];
+        //console.log(this.props.products);
+        //console.log(this.state.lastProduct);
+        console.log(lastProduct);
         return (
             /* <!-- Last Movie in DB --> */
             <div className="col-lg-6 mb-4">
                 <div className="card shadow mb-4">
                     <div className="card-header py-3">
-                        <h5 className="m-0 font-weight-bold text-gray-800">Last movie in Data Base</h5>
+                        <h5 className="m-0 font-weight-bold text-gray-800">Last product in Data Base</h5>
                     </div>
                     <div className="card-body">
                         <div className="text-center">
-                            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: "40rem"}} src="assets/images/mandalorian.jpg" alt=" Star Wars - Mandalorian "/>
+                            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: "20rem"}} src={`${lastProduct.image}`} alt=" Star Wars - Mandalorian "/>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa citationem ratione aperiam voluptatum non corporis ratione aperiam voluptatum quae dolorem culpa ratione aperiam voluptatum?</p>
-                        <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
+                        <p>{lastProduct.description}</p>
+                        <a className="btn btn-danger" target="_blank" rel="nofollow" href={`${lastProduct.detail}`}>View movie detail</a>
                     </div>
                 </div>
                 {/* <!-- End content row last movie in Data Base --> */}
@@ -29,5 +34,9 @@ class LastMovieInDb extends Component{
         )
     }
 }
+LastMovieInDb.propTypes = {
+    products: PropTypes.array.isRequired,
+} 
+
     
 export default LastMovieInDb;
