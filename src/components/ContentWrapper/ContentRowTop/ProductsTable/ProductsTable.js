@@ -1,38 +1,27 @@
 import React from 'react';
-import TableRowMovies from './TableRowMovies';
+import TableRowMovies from '../ProductsTable/TableRowMovies';
 //import "bootstrap/dist/css/bootstrap.min.css"
-
-function TableMovies() {
-
-    const cells = [{
-        title: "Billy Elliot",
-        duration: 123,
-        rating: 5,
-        gender: ["Drama", "Comedia"],
-        awards: 2,
-    },
-    {
-        title: "Alicia en el país de las maravillas",
-        duration: 142,
-        rating: 4.8,
-        gender: ["Drama", "Acción", "Comedia"],
-        awards: 3,
-    }
-    ]
+//let totalProducts = this.props.products.length;
+function TableMovies(props) {
+    console.log(props.products)
+    let cells = props.products;
 
     return (
         <>
         <table className ="table /* striped bordered hover */">
             <thead>
                 <tr>
-                <th>Título</th>
-                <th>Duración</th>
-                <th>Rating</th>
-                <th>Genero</th>
-                <th>Premios</th>
+                <th>ID</th>
+                <th>Marca</th>
+                <th>Descripción</th>
+                <th>Categoria</th>
                 </tr>
             </thead>
-            <TableRowMovies cells = {cells}/>
+            {cells.map((cell,i) => (
+                    <TableRowMovies key={cell + i} {...cell} />
+                    )
+                )}
+            {/* <TableRowMovies cells = {cells}/> */}
         </table>
         </>
         

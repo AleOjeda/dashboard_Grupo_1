@@ -11,9 +11,6 @@ class LastMovieInDb extends Component{
     render (){
         let totalProducts = this.props.products.length;
         let lastProduct = this.props.products[totalProducts -1];
-        //console.log(this.props.products);
-        //console.log(this.state.lastProduct);
-        console.log(lastProduct);
         return (
             /* <!-- Last Movie in DB --> */
             <div className="col-lg-6 mb-4">

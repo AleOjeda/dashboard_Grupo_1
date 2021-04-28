@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ContentRowMovies from "../../ContentWrapper/ContentRowTop/ContentRowMovies/ContentRowMovies";
 import LastMovieInDb from "../../ContentWrapper/ContentRowTop/LastMovieInDb/LastMovieInDb";
 import GenreshInDb from "../../ContentWrapper/ContentRowTop/GenresInDb/GenreshInDb";
-import TableMovies from '../../TableMovies';
+import ProductsTable from "../../ContentWrapper/ContentRowTop/ProductsTable/ProductsTable";
 import PropTypes from 'prop-types';
 
 class ContentRowTop extends Component{
@@ -58,7 +58,7 @@ class ContentRowTop extends Component{
                         <LastMovieInDb products={this.props.products}/>
                         <GenreshInDb genres={genres} />
                     </div>
-                    <TableMovies />
+                    <ProductsTable products={this.props.products} />
             </div>
         )
     }
